@@ -164,15 +164,15 @@ const MyPostWidget = ({ pathPicture }: IProps) => {
           sx={
             post
               ? {
-                  color: palette.background.paper,
-                  backgroundColor: palette.primary.main,
-                  borderRadius: '3rem',
-                }
+                color: palette.background.paper,
+                backgroundColor: palette.primary.main,
+                borderRadius: '3rem',
+              }
               : {
-                  color: palette.background.paper,
-                  backgroundColor: palette.primary.light,
-                  borderRadius: '3rem',
-                }
+                color: palette.background.paper,
+                backgroundColor: palette.primary.light,
+                borderRadius: '3rem',
+              }
           }
         >
           POST

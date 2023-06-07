@@ -107,8 +107,7 @@ const UserWidget = ({ userId, pathPicture }: IProps) => {
       {/* THIRD ROW */}
       <Box p='1rem 0'>
         <FlexBetween mb='0.5rem'>
-          <Typography color={medium}>Who's viewed your profile</Typography>
-          {/* eslint-disable-line */}
+          <Typography color={medium}>Who's viewed your profile</Typography>{/* eslint-disable-line */}
           <Typography color={main} fontWeight='500'>
             {viewedProfile}
           </Typography>
