@@ -29,10 +29,13 @@ const UserWidget = ({ userId, pathPicture }: IProps) => {
   const main = palette.secondary.main
 
   const getUser = async () => {
-    const response = await fetch(`http://localhost:3001/users/${userId}`, {
-      method: 'GET',
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    const response = await fetch(
+      `https://mern-app-api-rho.vercel.app/users/${userId}`,
+      {
+        method: 'GET',
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    )
     const data = await response.json()
     setUser(data)
   }
@@ -104,7 +107,8 @@ const UserWidget = ({ userId, pathPicture }: IProps) => {
       {/* THIRD ROW */}
       <Box p='1rem 0'>
         <FlexBetween mb='0.5rem'>
-          <Typography color={medium}>Who's viewed your profile</Typography>{/* eslint-disable-line */}
+          <Typography color={medium}>Who's viewed your profile</Typography>
+          {/* eslint-disable-line */}
           <Typography color={main} fontWeight='500'>
             {viewedProfile}
           </Typography>

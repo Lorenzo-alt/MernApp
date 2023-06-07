@@ -78,7 +78,7 @@ const Form = () => {
     console.log(values.picture?.name as string)
 
     const savedUserResponse = await fetch(
-      'http://localhost:3001/auth/register',
+      'https://mern-app-api-rho.vercel.app/auth/register',
       {
         method: 'POST',
         body: formData,
@@ -92,12 +92,18 @@ const Form = () => {
     }
   }
 
-  const login = async (values: IValues, onSubmitProps: FormikHelpers<IValues>) => {
-    const loggedInResponse = await fetch('http://localhost:3001/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(values),
-    })
+  const login = async (
+    values: IValues,
+    onSubmitProps: FormikHelpers<IValues>
+  ) => {
+    const loggedInResponse = await fetch(
+      'https://mern-app-api-rho.vercel.app/auth/login',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      }
+    )
     const loggedIn = await loggedInResponse.json()
     onSubmitProps.resetForm()
     if (loggedIn) {

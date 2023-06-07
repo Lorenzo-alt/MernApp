@@ -24,7 +24,7 @@ const Friend = ({ friendId, name, subtitle, userPathPicture }: IProps) => {
 
   // const getFriends = async () => {
   //   const response = await fetch(
-  //     `http://localhost:3001/users/${user._id}/friends`,
+  //     `https://mern-app-api-rho.vercel.app/users/${user._id}/friends`,
   //     {
   //       method: 'GET',
   //       headers: { Authorization: `Bearer ${token}` },
@@ -48,7 +48,7 @@ const Friend = ({ friendId, name, subtitle, userPathPicture }: IProps) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `http://localhost:3001/users/${user?._id}/${friendId}`,
+      `https://mern-app-api-rho.vercel.app/users/${user?._id}/${friendId}`,
       {
         method: 'PATCH',
         headers: {

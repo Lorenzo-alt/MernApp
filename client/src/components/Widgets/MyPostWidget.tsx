@@ -50,7 +50,7 @@ const MyPostWidget = ({ pathPicture }: IProps) => {
       formData.append('pathPicture', image.name)
     }
 
-    const response = await fetch('http://localhost:3001/posts', {
+    const response = await fetch('https://mern-app-api-rho.vercel.app/posts', {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
@@ -161,14 +161,19 @@ const MyPostWidget = ({ pathPicture }: IProps) => {
         <Button
           disabled={!post}
           onClick={handlePost}
-          sx={post ? {
-            color: palette.background.paper,
-            backgroundColor: palette.primary.main,
-            borderRadius: '3rem',
-          }: {
-            color: palette.background.paper,
-            backgroundColor: palette.primary.light,
-            borderRadius: '3rem',}}
+          sx={
+            post
+              ? {
+                  color: palette.background.paper,
+                  backgroundColor: palette.primary.main,
+                  borderRadius: '3rem',
+                }
+              : {
+                  color: palette.background.paper,
+                  backgroundColor: palette.primary.light,
+                  borderRadius: '3rem',
+                }
+          }
         >
           POST
         </Button>
